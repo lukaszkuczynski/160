@@ -7,7 +7,7 @@ def index(request):
 
 @login_required()
 def create_summary(request):
-    return render(request, 'app_160/create_summary.html')
+    return render(request, 'app_160/create_summary.html', context={"user": request.user})
 
 def account(request):
     current_user = request.user
