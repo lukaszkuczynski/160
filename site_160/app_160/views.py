@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from . import forms, models
+from django.contrib.auth.signals import user_logged_in
+
 
 def index(request):
     return render(request, 'app_160/index.html')
@@ -34,3 +36,9 @@ def oauth_logout(request):
 def summary_list(request):
     summaries = models.SummaryModel.objects.all()
     return render(request, "app_160/list.html", context={"summaries": summaries})
+
+
+def set_status_online(sender, user, request, **kwargs):
+    print('intercepting!!' + request.user.username)
+
+user_logged_in.connect(set_status_online)
