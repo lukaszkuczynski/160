@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^create/', views.create_summary),
     url(r'^created/', views.summary_created),
     url(r'^login', views.login),
-    url(r'^oauth_logout', views.oauth_logout)
+    url(r'^oauth_logout', views.oauth_logout),
+    url(r'^summary', views.summary_list),
 ]

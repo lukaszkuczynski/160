@@ -30,3 +30,7 @@ def login(request):
 
 def oauth_logout(request):
     return render(request, "app_160/logout.html")
+
+def summary_list(request):
+    summaries = models.SummaryModel.objects.all()
+    return render(request, "app_160/list.html", context={"summaries": summaries})
