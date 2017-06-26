@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from . import forms
+from . import forms, models
 
 def index(request):
     return render(request, 'app_160/index.html')
@@ -11,9 +11,12 @@ def create_summary(request):
     if request.method == 'POST':
         form = forms.SummaryForm(request.POST)
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+            model = models.SummaryModel()
+            model.author = request.user.username
+            model.url = form.cleaned_data['url']
+            model.text = form.cleaned_data['text']
+            model.tags = form.cleaned_data['tags']
+            model.save()
             return HttpResponseRedirect('/created/')
     else:
         form = forms.SummaryForm()
