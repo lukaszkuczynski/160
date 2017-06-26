@@ -134,5 +134,6 @@ SOCIAL_AUTH_GITHUB_KEY=os.getenv("GITHUB_CLIENT_ID","your_client_id_from_github"
 SOCIAL_AUTH_GITHUB_SECRET =os.getenv("GITHUB_CLIENT_SECRET","your_client_secret_from_github")
 
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/oauth_logout'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'

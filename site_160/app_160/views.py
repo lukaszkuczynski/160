@@ -10,6 +10,7 @@ def create_summary(request):
     return render(request, 'app_160/create_summary.html', context={"user": request.user})
 
 def login(request):
-    current_user = request.user
-    print(current_user)
-    return render(request, "app_160/login.html", context={"user": current_user})
+    return render(request, "app_160/login.html", context={"user": request.user})
+
+def oauth_logout(request):
+    return render(request, "app_160/logout.html")
