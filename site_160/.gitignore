@@ -1,3 +1,4 @@
 start.cmd
 *.sqlite3
 __pycache__
+make_and_migrate.cmd
