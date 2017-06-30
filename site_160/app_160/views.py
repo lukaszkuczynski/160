@@ -39,6 +39,6 @@ def summary_list(request):
 
 
 def set_status_online(sender, user, request, **kwargs):
-    print('intercepting!!' + request.user.username)
+    print('User %s is logging in' % request.user.username)
 
 user_logged_in.connect(set_status_online)
