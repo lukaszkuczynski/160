@@ -33,20 +33,21 @@
 				</ul>
 			</nav>
 
-            <div class="container">
+            <div>
                 {% block content %}
 
                 {% endblock %}
 
             </div>
 
-			<div class="wrapper style4">
-				<article id="contact" class="container 75%">
+			<div class="wrapper last style4">
+                {% block bottom %}
+                {% endblock %}
                 <footer>
                     <ul id="copyright">
                         <li>&copy; 160 znaków. Wszelkie prawa zastrzeżone.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                     </ul>
-                </footer></article>
+                </footer>
 			</div>
 
 

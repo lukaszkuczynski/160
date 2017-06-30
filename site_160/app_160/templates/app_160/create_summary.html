@@ -1,31 +1,7 @@
-﻿<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-{% load static %}
-<html>
-	<head>
-		<title>160 znaków dla Twojego rozwoju.</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="{% static 'assets/js/ie/html5shiv.js' %}"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'assets/css/ie8.css' %}" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'assets/css/ie9.css' %}" /><![endif]-->
-	</head>
-	<body>
+﻿{% extends "app_160/base.html" %}
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">do góry</a></li>
-					<li><a href="/">Home</a></li>
-				</ul>
-			</nav>
+{% block content %}
 
-		<!-- Work -->
 			<div class="wrapper style2">
 				<article id="work">
 					<header>
@@ -50,25 +26,4 @@
 			</div>
 
 
-		<!-- Contact -->
-			<div class="wrapper style4">
-				<article id="contact" class="container 75%">
-					<footer>
-						<ul id="copyright">
-							<li>&copy; 160 znaków. Wszelkie prawa zastrzeżone.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
-				</article>
-			</div>
-
-		<!-- Scripts -->
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel-viewport.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="{% static 'assets/js/ie/respond.min.js' %}"></script><![endif]-->
-			<script src="{% static 'assets/js/main.js' %}"></script>
-
-	</body>
-</html>
+{% endblock %}
