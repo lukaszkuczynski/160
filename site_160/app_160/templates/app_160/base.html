@@ -14,19 +14,23 @@
 		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'assets/css/ie8.css' %}" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="{% static 'assets/css/ie9.css' %}" /><![endif]-->
+        <link rel="stylesheet" href="{% static 'assets/css/customizing.css' %}" />
 	</head>
 	<body>
 
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
+                    <li><a href="/">Główna</a></li>
 					<li><a href="#top">do góry</a></li>
 					<li><a href="/summary">Wpisy</a></li>
 					<li><a href="/create">Napisz</a></li>
 					<li><a href="#contact">Kontakt</a></li>
 					<li><label>
                         {% if user.is_authenticated %}
-                            Hello, {{ user.username }}.
+                            Witaj, {{ user.username }}. <a class="inline" href="/logout">Wyloguj</a>
+                        {% else %}
+                            <a href="/login">Zaloguj</a>
                         {% endif %}
 
                         </label></li>
