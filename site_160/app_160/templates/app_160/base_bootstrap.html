@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+	<head>
+		<title>160 znaków dla Twojego rozwoju.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/paper.bootstrap.min.css' %}" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+          <script src="../bower_components/respond/dest/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="{% static 'assets/css/customizing.css' %}" />
+
+	</head>
+	<body>
+
+	<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">160 znaków</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+                <li><a href="/">Główna</a></li>
+                <li><a href="/summary">Wpisy</a></li>
+                <li><a href="/create">Twórz</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                <li><label>
+                    {% if user.is_authenticated %}
+                        Witaj, {{ user.username }}. <a class="inline" href="/logout">Wyloguj</a>
+                    {% else %}
+                        <a href="/login">Zaloguj</a>
+                    {% endif %}
+
+                    </label></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container content">
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+    <div class="container">
+        <footer>
+                {% block bottom %}
+                {% endblock %}
+        <div class="row">
+          <div class="col-lg-12">
+
+            <!--<ul class="list-unstyled">-->
+              <!--<li class="pull-right"><a href="#top">Back to top</a></li>-->
+              <!--<li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>-->
+              <!--<li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>-->
+              <!--<li><a href="https://twitter.com/bootswatch">Twitter</a></li>-->
+              <!--<li><a href="https://github.com/thomaspark/bootswatch/">GitHub</a></li>-->
+              <!--<li><a href="../help/#api">API</a></li>-->
+              <!--<li><a href="../help/#support">Support</a></li>-->
+            <!--</ul>-->
+            <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="/cdn-cgi/l/email-protection#4135292e2c203201232e2e353236203522296f222e2c"><span class="__cf_email__" data-cfemail="592d313634382a193b36362d2a2e382d3a31773a3634">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a>.</p>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+
+          </div>
+        </div>
+
+      </footer>
+    </div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

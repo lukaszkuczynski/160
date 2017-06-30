@@ -1,23 +1,23 @@
-﻿{% extends "app_160/base.html" %}
+﻿{% extends "app_160/base_bootstrap.html" %}
 
 {% block content %}
 {% load static %}
-			<div class="wrapper style1 first">
-				<article class="container" id="top">
-					<div class="row">
-						<div class="4u 12u(mobile)">
-							<span class="image fit"><img src="{% static '/images/pic00.jpg' %}" alt="" /></span>
-						</div>
-						<div class="8u 12u(mobile)">
-							<header>
-								<h1>Pozostało Ci <strong>160 znaków</strong>.</h1>
-							</header>
-							<p>Pomóż w rozwoju wiedzy.  Natłok informacji, Ty możesz to zmienić. <a href="#">Zobacz wpisy</a> albo <a href="#">zostań autorem</a>
-							<a href="#work" class="button big scrolly">Dowiedz się więcej</a>							
-						</div>
-					</div>
-				</article>
-			</div>
+
+
+
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Skrót</h1>
+            <p class="lead">pozostało ci 160 znaków</p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-sm-6">
+            <div class="sponsor">
+              t u jest m ie ejsce na twoja reklaem
+            </div>
+          </div>
+        </div>
+
 
 		<!-- Work -->
 			<div class="wrapper style2">
@@ -83,5 +83,6 @@
 					</div>
 				</article>
 			</div>
+	  </div>
 
 {% endblock %}

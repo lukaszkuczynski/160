@@ -1,23 +1,13 @@
-﻿{% extends "app_160/base.html" %}
+﻿{% extends "app_160/base_bootstrap.html" %}
 
 {% block content %}
+			<h1>Nowy wpis, {{user}}</h1>
 
-			<div class="wrapper style2">
-				<header>
-					<h2>Stwórz podsumowanie, {{user}}</h2>
-					<!-- <p></p> -->
-				</header>
-				<div class="container">
-					<div class="6u">
-
-						<form action="" method="post">
-							{% csrf_token %}
-							{{ form }}
-							<input type="submit" value="Zapisz" />
-						</form>
-					</div>
-				</div>
-			</div>
+			<form action="" method="post">
+				{% csrf_token %}
+				{{ form }}
+				<input type="submit" value="Zapisz" />
+			</form>
 
 
 {% endblock %}
