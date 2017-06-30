@@ -10,11 +10,24 @@
 						<!-- <p></p> -->
 					</header>
 					<div class="container">
-						<ul>
+						<table>
+                            <tr>
+                                <th>podsumowanie</th>
+                                <th>tagi</th>
+                                <th>link</th>
+                                <th>autor</th>
+                            </tr>
 						{% for summary in summaries %}
-							<li>{{ summary.text }}</li>
+                            <tr>
+                                <td> {{ summary.text }} </td>
+                                <td> {{ summary.tags }} </td>
+                                <td> <a href="{{ summary.link }}">źródło</a> </td>
+                                <td> {{ summary.author }} </td>
+                            </tr>
+
 						{% endfor %}
-						</ul>
+
+                        </table>
 					</div>
 				</article>
 			</div>
