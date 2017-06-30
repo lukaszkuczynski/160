@@ -21,11 +21,10 @@
 		<!-- Nav -->
 			<nav id="nav">
 				<ul class="container">
-                    <li><a href="/">Główna</a></li>
 					<li><a href="#top">do góry</a></li>
+                    <li><a href="/">Główna</a></li>
 					<li><a href="/summary">Wpisy</a></li>
-					<li><a href="/create">Napisz</a></li>
-					<li><a href="#contact">Kontakt</a></li>
+					<li><a href="/create">Twórz</a></li>
 					<li><label>
                         {% if user.is_authenticated %}
                             Witaj, {{ user.username }}. <a class="inline" href="/logout">Wyloguj</a>

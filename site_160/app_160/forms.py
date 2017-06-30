@@ -1,8 +1,8 @@
 from django import forms
 
 class SummaryForm(forms.Form):
-    url = forms.CharField(label='url', max_length=100)
-    text = forms.CharField(label='text', max_length=160)
-    tags = forms.CharField(label='tags', max_length=100)
+    url = forms.URLField(label='', max_length=100, widget=forms.TextInput(attrs={'placeholder': 'url'}))
+    text = forms.CharField(label='', max_length=160, widget=forms.Textarea(attrs={'placeholder': 'wpisz swój tekst...'}))
+    tags = forms.CharField(label='', max_length=100, widget=forms.TextInput(attrs={'placeholder': 'tagi'}))
 
 

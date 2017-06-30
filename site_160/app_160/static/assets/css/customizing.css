@@ -1,3 +1,7 @@
 #nav a.inline {
     display: inline
 }
+
+ul.errorlist {
+    color: red
+}
