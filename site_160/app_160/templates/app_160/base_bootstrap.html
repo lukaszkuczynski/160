@@ -33,14 +33,21 @@
                 <li><a href="/create">Twórz</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-                <li><label>
-                    {% if user.is_authenticated %}
-                        Witaj, {{ user.username }}. <a class="inline" href="/logout">Wyloguj</a>
-                    {% else %}
-                        <a href="/login">Zaloguj</a>
-                    {% endif %}
+              {% if user.is_authenticated %}
+            <li>
+                <p class="navbar-text">
+                    Witaj, {{ user.username }}.
+                </p>
+            </li>
+              {% endif %}
+            <li>
+                {% if user.is_authenticated %}
+                    <a href="/logout">Wyloguj</a>
+                {% else %}
+                    <a href="/login">Zaloguj</a>
+                {% endif %}
 
-                    </label></li>
+            </li>
           </ul>
         </div>
       </div>
