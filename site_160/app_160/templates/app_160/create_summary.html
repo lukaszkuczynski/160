@@ -2,8 +2,8 @@
 
 {% block content %}
 {% load bootstrap %}
-			<h1>Nowy wpis, {{user}}</h1>
-
+			<h1>nowy wpis od ciebie</h1>
+			<div class="well">
 			<form class="form-horizontal" action="" method="post">
 				<fieldset>
 					{% csrf_token %}
@@ -15,6 +15,6 @@
 					</div>
 				</fieldset>
 			</form>
-
+</div>
 
 {% endblock %}
