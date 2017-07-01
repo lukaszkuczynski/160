@@ -10,23 +10,25 @@
 						<!-- <p></p> -->
 					</header>
 					<div class="container">
-						<table>
-                            <tr>
-                                <th>podsumowanie</th>
-                                <th>tagi</th>
-                                <th>link</th>
-                                <th>autor</th>
-                            </tr>
-						{% for summary in summaries %}
-                            <tr>
-                                <td> {{ summary.text }} </td>
-                                <td> {{ summary.tags }} </td>
-                                <td> <a href="{{ summary.url }}">źródło</a> </td>
-                                <td> {{ summary.author }} </td>
-                            </tr>
-
-						{% endfor %}
-
+						<table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>podsumowanie</th>
+                                    <th>tagi</th>
+                                    <th>link</th>
+                                    <th>autor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+        						{% for summary in summaries %}
+                                    <tr>
+                                        <td> {{ summary.text }} </td>
+                                        <td> {{ summary.tags }} </td>
+                                        <td> <a href="{{ summary.url }}">źródło</a> </td>
+                                        <td> {{ summary.author }} </td>
+                                    </tr>
+						        {% endfor %}
+                            </tbody>
                         </table>
 					</div>
 				</article>
