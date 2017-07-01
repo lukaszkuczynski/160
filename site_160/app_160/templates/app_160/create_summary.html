@@ -1,12 +1,19 @@
 ﻿{% extends "app_160/base_bootstrap.html" %}
 
 {% block content %}
+{% load bootstrap %}
 			<h1>Nowy wpis, {{user}}</h1>
 
-			<form action="" method="post">
-				{% csrf_token %}
-				{{ form }}
-				<input type="submit" value="Zapisz" />
+			<form class="form-horizontal" action="" method="post">
+				<fieldset>
+					{% csrf_token %}
+					{{ form|bootstrap_horizontal }}
+					<div class="form-group">
+						<div class="col-lg-10 col-lg-offset-2">
+							<input type="submit" class="btn btn-primary" value="Zapisz" />
+    	                </div>
+					</div>
+				</fieldset>
 			</form>
 
 
