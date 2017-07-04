@@ -19,13 +19,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','lukasz.usermd.net']
 
 
 # Application definition
@@ -132,8 +130,15 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GITHUB_KEY=os.getenv("GITHUB_CLIENT_ID","your_client_id_from_github")
-SOCIAL_AUTH_GITHUB_SECRET =os.getenv("GITHUB_CLIENT_SECRET","your_client_secret_from_github")
+
+def from_file(name):
+    full_path = os.path.join(BASE_DIR, name)
+    with open(full_path) as f:
+        return f.read().strip()
+
+SOCIAL_AUTH_GITHUB_KEY=from_file("github_client_id")
+SOCIAL_AUTH_GITHUB_SECRET =from_file("github_secret")
+SECRET_KEY = from_file("django_secret")
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/oauth_logout'
