@@ -12,6 +12,7 @@
                     <th>tagi</th>
                     <th>link</th>
                     <th>autor</th>
+                    <th>created</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                         <td> {{ summary.tags }} </td>
                         <td> <a href="{{ summary.url }}">źródło</a> </td>
                         <td> {{ summary.author }} </td>
+                        <td> {{ summary.created_at }} </td>
                     </tr>
                 {% endfor %}
             </tbody>
