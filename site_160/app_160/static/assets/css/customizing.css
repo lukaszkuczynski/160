@@ -5,3 +5,11 @@ ul.errorlist {
 div.content {
     padding-top: 60px;
 }
+
+div.placeholder64 {
+    height: 64px;
+    width: 64px;
+    background-color: white;
+    border-left: 2px solid gray;
+
+}

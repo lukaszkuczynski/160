@@ -2,31 +2,24 @@
 
 {% block content %}
 
-    <h1>Lista podsumowań</h1>
+    <h3>Rekomendacje</h3>
         <!-- <p></p> -->
     <div class="container">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>podsumowanie</th>
-                    <th>tagi</th>
-                    <th>link</th>
-                    <th>autor</th>
-                    <th>created</th>
-                </tr>
-            </thead>
-            <tbody>
                 {% for summary in summaries %}
-                    <tr>
-                        <td> {{ summary.text }} </td>
-                        <td> {{ summary.tags }} </td>
-                        <td> <a href="{{ summary.url }}">źródło</a> </td>
-                        <td> {{ summary.author }} </td>
-                        <td> {{ summary.created_at }} </td>
-                    </tr>
+
+<div class="col-md-12">
+    <h3>źródło na XXX</h3>
+    <p class="lead">rekomendowane przez {{ summary.author }} </p>
+    <blockquote class="blockquote">
+        {{ summary.text }}
+    </blockquote>
+    <div><span class="badge">opublikowano {{ summary.created_at }} </span>
+        <div class="pull-right"><span class="label label-primary"> {{summary.tags }}</span>
+        </div>
+     </div>
+    <hr>
+</div>
                 {% endfor %}
-            </tbody>
-        </table>
     </div>
 
 {% endblock %}
