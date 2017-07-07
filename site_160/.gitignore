@@ -5,3 +5,7 @@ make_and_migrate.cmd
 django_secret
 github_client_id
 github_secret
+pg_host
+pg_password
+pg_user
+pg_dbname

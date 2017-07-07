@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+def from_file(name):
+    full_path = os.path.join(BASE_DIR, name)
+    with open(full_path) as f:
+        return f.read().strip()
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -80,11 +86,14 @@ WSGI_APPLICATION = 'site_160.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': from_file('pg_dbname'),
+        'USER': from_file('pg_user'),
+        'PASSWORD': from_file('pg_password'),
+        'HOST': from_file('pg_host'),
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -130,11 +139,6 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-
-def from_file(name):
-    full_path = os.path.join(BASE_DIR, name)
-    with open(full_path) as f:
-        return f.read().strip()
 
 SOCIAL_AUTH_GITHUB_KEY=from_file("github_client_id")
 SOCIAL_AUTH_GITHUB_SECRET =from_file("github_secret")

@@ -1,3 +1,4 @@
 social-auth-app-django
 mongoengine==0.13.0
 django-bootstrap-form
+psycopg2==2.7.1
