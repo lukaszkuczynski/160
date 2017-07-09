@@ -5,8 +5,22 @@
 
 <h1>Zostałeś wylogowany</h1>
 
-<h2>Github</h2>
+<div class="row">
+    <h3>Zaloguj się jeszcze raz...</h3>
+        <div class="col-sm-4">
+            <a class="btn btn-block btn-social btn-github" href="{% url "social:begin" "github" %}">
+                <span class="fa fa-github"></span> Loguj z GitHub
+            </a>
+        </div>
+</div>
+<div class="row">
+    <h3>Strona główna</h3>
+        <div class="col-sm-4">
+            <a class="btn btn-block" href="/">
+                Idź do strony głównej
+            </a>
+        </div>
+</div>
 
-<a href="{% url "social:begin" "github" %}">GITHUB login</a>
 
 {% endblock %}
