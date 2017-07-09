@@ -17,7 +17,7 @@ def create_summary(request):
             model.author = request.user.username
             model.url = form.cleaned_data['url']
             model.text = form.cleaned_data['text']
-            model.tags = form.cleaned_data['tags']
+            model.tags = form.cleaned_data['tags'].split(',')
             model.save()
             return HttpResponseRedirect('/created/')
     else:

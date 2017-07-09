@@ -14,7 +14,10 @@
         {{ summary.text }}
     </blockquote>
     <div><span class="badge">opublikowano {{ summary.created_at }} </span>
-        <div class="pull-right"><span class="label label-primary"> {{summary.tags }}</span>
+        <div class="pull-right">
+            {% for tag in summary.tags %}
+                <span class="label label-primary"> {{tag}}</span>
+            {% endfor %}
         </div>
      </div>
     <hr>

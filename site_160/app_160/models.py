@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class SummaryModel(models.Model):
@@ -7,5 +8,5 @@ class SummaryModel(models.Model):
     author = models.CharField(max_length=100)
     url = models.CharField(max_length=100)
     text = models.CharField(max_length=160)
-    tags = models.CharField(max_length=100)
+    tags = ArrayField(models.CharField(max_length=20), size=10)
 
