@@ -31,26 +31,28 @@ def login(request):
     return render(request, "app_160/login.html", context={"user": request.user})
 
 def oauth_logout(request):
+    new_event('User logging out', request, 'access')
     return render(request, "app_160/logout.html")
 
 def summary_list(request):
     summaries = models.SummaryModel.objects.all()
     return render(request, "app_160/list.html", context={"summaries": summaries})
 
-def new_event(description, request):
+def new_event(description, request, event_type=''):
     event = models.Event()
     event.description = description
     event.user = request.user.username
+    event.event_type = event_type
     event.save()
 
 def set_status_online(sender, user, request, **kwargs):
-    new_event(description='User is logging in', request=request)
+    new_event(description='User logging in', request=request, event_type='access')
 
 def redirect(request):
     if request.method == 'GET':
         url_to_redirect = request.GET['next_url']
         print(url_to_redirect)
-        new_event('Redirecting to %s' % url_to_redirect, request)
+        new_event('Redirecting to %s' % url_to_redirect, request, 'redirect')
         return HttpResponseRedirect(url_to_redirect)
 
 
