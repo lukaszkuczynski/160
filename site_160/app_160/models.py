@@ -10,3 +10,8 @@ class SummaryModel(models.Model):
     text = models.CharField(max_length=160)
     tags = ArrayField(models.CharField(max_length=20), size=10)
 
+
+class Event(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    description = models.CharField(max_length=200)
+    user = models.CharField(max_length=100, default='')
