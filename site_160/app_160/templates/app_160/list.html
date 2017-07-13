@@ -11,7 +11,7 @@
 <div class="col-md-12">
     <p class="lead">rekomendowane przez {{ summary.author }} </p>
     <blockquote class="blockquote">
-        {{ summary.text }} || <a href="{{summary.url}}">Zobacz oryginał</a>
+        {{ summary.text }} || <a href="/redirect?next_url={{summary.url}}">Zobacz oryginał</a>
     </blockquote>
     <div><span class="badge">opublikowano {{ summary.created_at }} </span>
         <div class="pull-right">
