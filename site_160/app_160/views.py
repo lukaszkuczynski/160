@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 from . import forms, models
 from django.contrib.auth.signals import user_logged_in
+from django.core import serializers
 
 
 def index(request):
@@ -55,5 +57,10 @@ def redirect(request):
         new_event('Redirecting to %s' % url_to_redirect, request, 'redirect')
         return HttpResponseRedirect(url_to_redirect)
 
+@login_required()
+@permission_required('is_superuser')
+def events(request):
+    event_objects = models.Event.objects.all()
+    return render(request, "app_160/events.html", context={"events": event_objects})
 
 user_logged_in.connect(set_status_online)
