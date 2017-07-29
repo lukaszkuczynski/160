@@ -37,7 +37,7 @@ def oauth_logout(request):
     return render(request, "app_160/logout.html")
 
 def summary_list(request):
-    summaries = models.SummaryModel.objects.all()
+    summaries = models.SummaryModel.objects.all().order_by('-created_at')
     return render(request, "app_160/list.html", context={"summaries": summaries})
 
 def new_event(description, request, event_type=''):
@@ -60,7 +60,7 @@ def redirect(request):
 @login_required()
 @permission_required('is_superuser')
 def events(request):
-    event_objects = models.Event.objects.all()
+    event_objects = models.Event.objects.all().order_by('-timestamp')
     return render(request, "app_160/events.html", context={"events": event_objects})
 
 user_logged_in.connect(set_status_online)
